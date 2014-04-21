@@ -1,0 +1,17 @@
+<%= render 'layouts/errors', object: @message %>
+
+<h2>texteR your friends</h2>
+<br />
+
+<%= form_for @message do |f| %>
+  <div class="form-group">
+    <%= f.text_field :from, placeholder: "From" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :to, placeholder: "To" %>
+  </div>
+  <div class="form-group">
+    <%= f.text_field :body, placeholder: "Message" %>
+  </div>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>

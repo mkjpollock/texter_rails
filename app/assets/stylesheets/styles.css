@@ -1,0 +1,19 @@
+#main {
+  margin-top: 50px;
+}
+
+#flash_notice, #flash_error {
+  padding: 5px 8px;
+  margin: 10px 0;
+  margin-right: 280px;
+  width: 20%;
+}
+
+#flash_notice {
+  background-color: green;
+
+}
+
+#flash_error {
+  background-color: red;
+}
