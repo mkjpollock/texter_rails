@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe Message, :vcr => true do
+  it { should belong_to :contact }
+  it { should belong_to :user }
+  it { should belong_to :receiver }
   it "saves the message to the database" do
     message = Message.new(:body => 'test message', :to => '2603378299', :from => '2602408165')
     message.save.should eq true

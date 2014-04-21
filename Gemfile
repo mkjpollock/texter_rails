@@ -7,6 +7,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
+gem 'turbolinks'
 gem 'bootstrap-sass'
 gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'bcrypt'

@@ -2,6 +2,9 @@ class MessagesController < ApplicationController
 
   def new
     @message = Message.new
+    if current_user != nil
+      @contacts = current_user.contacts
+    end
   end
 
   def create

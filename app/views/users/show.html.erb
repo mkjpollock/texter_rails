@@ -1,0 +1,12 @@
+<h4>Send a message to <%= @user.email %>! %></h4>
+
+<%= form_for @message do |f| %>
+    <%= f.hidden_field :from, value: current_user.phone %>
+  <div class="form-group">
+    <%= f.hidden_field :to, value: @user.phone %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :body, placeholder: "Message" %>
+  </div>
+  <%= f.submit class: "btn btn-success" %>
+<% end %>

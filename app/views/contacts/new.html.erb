@@ -1,0 +1,8 @@
+<h3>New Contact</h3>
+
+<%= form_tag '/contacts', method: :post %>
+<div class="form-group">
+  <%= label_tag "email address" %><br>
+  <%= text_field_tag :email %>
+</div>
+<%= submit_tag "Create Contact", class: "btn btn-success" %>

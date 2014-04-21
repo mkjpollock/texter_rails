@@ -1,17 +1,29 @@
 <%= render 'layouts/errors', object: @message %>
 
-<h2>texteR your friends</h2>
-<br />
+<div class="row">
+  <div class="col-md-6 pull-left">
+    <h2>texteR your friends</h2>
+    <br />
 
-<%= form_for @message do |f| %>
-  <div class="form-group">
-    <%= f.text_field :from, placeholder: "From" %>
+    <%= form_for @message do |f| %>
+      <div class="form-group">
+        <%= f.text_field :from, placeholder: "From" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :to, placeholder: "To" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :body, placeholder: "Message" %>
+      </div>
+      <%= f.submit class: "btn btn-success" %>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= f.text_field :to, placeholder: "To" %>
+  <div class="col-md-6 pull-right">
+    <% if current_user != nil %>
+      <h2>Contacts</h2>
+      <% @contacts.each do |contact| %>
+        <li><%= link_to contact.receiver.email, user_path(contact.receiver) %></li>
+      <% end %>
+    <% end %>
   </div>
-  <div class="form-group">
-    <%= f.text_field :body, placeholder: "Message" %>
-  </div>
-  <%= f.submit class: "btn btn-success" %>
-<% end %>
+</div>
