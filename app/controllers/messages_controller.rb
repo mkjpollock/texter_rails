@@ -8,8 +8,12 @@ class MessagesController < ApplicationController
   end
 
   def create
+    @sender_contact = User.find_by_phone(params[:message][:from])
+    @receiver_contact = User.find_by_phone(params[:message][:to])
+    @contact = Contact.where(:user_id => @sender_contact.id, :receiver_id => @receiver_contact).first
     @message = Message.new(message_params)
     if @message.save
+      @message.update(:contact_id => @contact.id)
       flash[:notice] = "Message sent!"
       redirect_to root_path
     else
