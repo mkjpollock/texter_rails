@@ -1,4 +1,7 @@
-#Build an app that lets users send text messages to their friends.
+Texter
+======
+
+###Goal: Build an app that lets users send text messages to their friends.
 
 Complete
 ---------
@@ -6,10 +9,12 @@ Complete
 
 * As a user, I want to save contacts to an address book, so that it's easy to text them again without re-typing their phone number.
 
-Backlog
----------
+In progress
+-----------
 * As a user, I want to send a message to more than one person at once, so that I can mass text my friends.
 
+Backlog
+---------
 * As a user, I want to send pictures in my messages, so that I can share photos and cute cat pics with my
 friends.
 
