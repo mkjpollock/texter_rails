@@ -1,0 +1,117 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ykvdygzpbc.localtunnel.me/inbound_messages
+    body:
+      encoding: US-ASCII
+      string: params[user]=<twilio account sid>&params[password]=<twilio auth token>&params[payload][Body]=Thanks%20for%20the%20message!&params[payload][To]=2603378299&params[payload][From]=2602408165
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '213'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 422
+      message: 'Unprocessable Entity '
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Tue, 22 Apr 2014 22:21:42 GMT
+      Content-Type:
+      - text/plain; charset=utf-8
+      Content-Length:
+      - '6242'
+      Connection:
+      - keep-alive
+      X-Request-Id:
+      - 566ad0d1-6ef8-4453-821f-a521638f8e47
+      X-Runtime:
+      - '0.041316'
+    body:
+      encoding: UTF-8
+      string: "ActionController::InvalidAuthenticityToken at /inbound_messages\n===============================================================\n\n>
+        ActionController::InvalidAuthenticityToken\n\nactionpack (4.0.4) lib/action_controller/metal/request_forgery_protection.rb,
+        line 166\n--------------------------------------------------------------------------------------\n\n```
+        ruby\n  161           def initialize(controller)\n  162             @controller
+        = controller\n  163           end\n  164   \n  165           def handle_unverified_request\n>
+        166             raise ActionController::InvalidAuthenticityToken\n  167           end\n
+        \ 168         end\n  169       end\n  170   \n  171       protected\n```\n\nApp
+        backtrace\n-------------\n\n\n\nFull backtrace\n--------------\n\n - actionpack
+        (4.0.4) lib/action_controller/metal/request_forgery_protection.rb:166:in `handle_unverified_request'\n
+        - actionpack (4.0.4) lib/action_controller/metal/request_forgery_protection.rb:173:in
+        `handle_unverified_request'\n - devise (3.2.4) lib/devise/controllers/helpers.rb:182:in
+        `handle_unverified_request'\n - actionpack (4.0.4) lib/action_controller/metal/request_forgery_protection.rb:180:in
+        `verify_authenticity_token'\n - activesupport (4.0.4) lib/active_support/callbacks.rb:377:in
+        `_run__4013329375300915331__process_action__callbacks'\n - activesupport (4.0.4)
+        lib/active_support/callbacks.rb:80:in `run_callbacks'\n - actionpack (4.0.4)
+        lib/abstract_controller/callbacks.rb:17:in `process_action'\n - actionpack
+        (4.0.4) lib/action_controller/metal/rescue.rb:29:in `process_action'\n - actionpack
+        (4.0.4) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'\n
+        - activesupport (4.0.4) lib/active_support/notifications.rb:159:in `block
+        in instrument'\n - activesupport (4.0.4) lib/active_support/notifications/instrumenter.rb:20:in
+        `instrument'\n - activesupport (4.0.4) lib/active_support/notifications.rb:159:in
+        `instrument'\n - actionpack (4.0.4) lib/action_controller/metal/instrumentation.rb:30:in
+        `process_action'\n - actionpack (4.0.4) lib/action_controller/metal/params_wrapper.rb:250:in
+        `process_action'\n - activerecord (4.0.4) lib/active_record/railties/controller_runtime.rb:18:in
+        `process_action'\n - actionpack (4.0.4) lib/abstract_controller/base.rb:136:in
+        `process'\n - actionpack (4.0.4) lib/abstract_controller/rendering.rb:44:in
+        `process'\n - actionpack (4.0.4) lib/action_controller/metal.rb:195:in `dispatch'\n
+        - actionpack (4.0.4) lib/action_controller/metal/rack_delegation.rb:13:in
+        `dispatch'\n - actionpack (4.0.4) lib/action_controller/metal.rb:231:in `block
+        in action'\n - actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:80:in
+        `dispatch'\n - actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:48:in
+        `call'\n - actionpack (4.0.4) lib/action_dispatch/journey/router.rb:71:in
+        `block in call'\n - actionpack (4.0.4) lib/action_dispatch/journey/router.rb:59:in
+        `call'\n - actionpack (4.0.4) lib/action_dispatch/routing/route_set.rb:674:in
+        `call'\n - warden (1.2.3) lib/warden/manager.rb:35:in `block in call'\n -
+        warden (1.2.3) lib/warden/manager.rb:34:in `call'\n - rack (1.5.2) lib/rack/etag.rb:23:in
+        `call'\n - rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'\n - rack (1.5.2)
+        lib/rack/head.rb:11:in `call'\n - actionpack (4.0.4) lib/action_dispatch/middleware/params_parser.rb:27:in
+        `call'\n - actionpack (4.0.4) lib/action_dispatch/middleware/flash.rb:241:in
+        `call'\n - rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'\n
+        - rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'\n - actionpack
+        (4.0.4) lib/action_dispatch/middleware/cookies.rb:486:in `call'\n - activerecord
+        (4.0.4) lib/active_record/query_cache.rb:36:in `call'\n - activerecord (4.0.4)
+        lib/active_record/connection_adapters/abstract/connection_pool.rb:626:in `call'\n
+        - activerecord (4.0.4) lib/active_record/migration.rb:373:in `call'\n - actionpack
+        (4.0.4) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'\n
+        - activesupport (4.0.4) lib/active_support/callbacks.rb:373:in `_run__1243754553197801781__call__callbacks'\n
+        - activesupport (4.0.4) lib/active_support/callbacks.rb:80:in `run_callbacks'\n
+        - actionpack (4.0.4) lib/action_dispatch/middleware/callbacks.rb:27:in `call'\n
+        - actionpack (4.0.4) lib/action_dispatch/middleware/reloader.rb:64:in `call'\n
+        - actionpack (4.0.4) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'\n
+        - better_errors (1.1.0) lib/better_errors/middleware.rb:84:in `protected_app_call'\n
+        - better_errors (1.1.0) lib/better_errors/middleware.rb:79:in `better_errors_call'\n
+        - better_errors (1.1.0) lib/better_errors/middleware.rb:56:in `call'\n - actionpack
+        (4.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'\n
+        - actionpack (4.0.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in
+        `call'\n - railties (4.0.4) lib/rails/rack/logger.rb:38:in `call_app'\n -
+        railties (4.0.4) lib/rails/rack/logger.rb:20:in `block in call'\n - activesupport
+        (4.0.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'\n - activesupport
+        (4.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'\n - activesupport
+        (4.0.4) lib/active_support/tagged_logging.rb:68:in `tagged'\n - railties (4.0.4)
+        lib/rails/rack/logger.rb:20:in `call'\n - quiet_assets (1.0.2) lib/quiet_assets.rb:18:in
+        `call_with_quiet_assets'\n - actionpack (4.0.4) lib/action_dispatch/middleware/request_id.rb:21:in
+        `call'\n - rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'\n - rack (1.5.2)
+        lib/rack/runtime.rb:17:in `call'\n - activesupport (4.0.4) lib/active_support/cache/strategy/local_cache.rb:83:in
+        `call'\n - rack (1.5.2) lib/rack/lock.rb:17:in `call'\n - actionpack (4.0.4)
+        lib/action_dispatch/middleware/static.rb:64:in `call'\n - rack (1.5.2) lib/rack/sendfile.rb:112:in
+        `call'\n - railties (4.0.4) lib/rails/engine.rb:511:in `call'\n - railties
+        (4.0.4) lib/rails/application.rb:97:in `call'\n - rack (1.5.2) lib/rack/lock.rb:17:in
+        `call'\n - rack (1.5.2) lib/rack/content_length.rb:14:in `call'\n - rack (1.5.2)
+        lib/rack/handler/webrick.rb:60:in `service'\n - /Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:138:in
+        `service'\n - /Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/httpserver.rb:94:in
+        `run'\n - /Users/epicodus/.rubies/ruby-2.1.0/lib/ruby/2.1.0/webrick/server.rb:295:in
+        `block in start_thread'\n\n"
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 22:21:54 GMT
+recorded_with: VCR 2.9.0
