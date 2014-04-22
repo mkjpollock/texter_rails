@@ -8,18 +8,20 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @sender_contact = User.find_by_phone(params[:message][:from])
-    @receiver_contact = User.find_by_phone(params[:message][:to])
-    @contact = Contact.where(:user_id => @sender_contact.id, :receiver_id => @receiver_contact).first
-    @message = Message.new(message_params)
-    if @message.save
-      @message.update(:contact_id => @contact.id)
-      flash[:notice] = "Message sent!"
-      redirect_to root_path
-    else
-      flash[:error] = "There was an error"
-      render 'new'
+    phones = params[:message][:to]
+    phones.each do |phone|
+      @sender_contact = User.find_by_phone(params[:message][:from])
+      @receiver_contact = User.find_by_phone(phone)
+      @contact = Contact.where(:user_id => @sender_contact.id, :receiver_id => @receiver_contact).first
+      @message = Message.new(:body => params[:message][:body], :to => phone, :from => @sender_contact.phone)
+      if @message.save
+        if @receiver_contact != nil
+          @message.update(:contact_id => @contact.id)
+        end
+      end
     end
+    flash[:notice] = "Message(s) sent!"
+    redirect_to root_path
   end
 
 private

@@ -1,7 +1,8 @@
 $(function(add) {
-  add = $('#add_field').click(function() {
-    clone = $('#to_field').clone()
-    $(clone).find('input').val('')
+  add = $('.btn').on("click", function() {
+    clone = $('#to-field').clone();
+    $(clone).find('input').val('');
     $(clone).insertAfter($(this).parent());
+    $(clone).after("<br><br>");
   });
 });
