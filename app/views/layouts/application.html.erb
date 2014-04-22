@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= content_for?(:title) ? yield(:title)+" | texteR" : "texteR" %></title>
+  <title>
+    <%= content_for?(:title) ? yield(:title)+" | texteR" : "texteR" %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
   <%= csrf_meta_tags %>
 </head>
 <body>

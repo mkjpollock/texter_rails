@@ -9,8 +9,9 @@
       <div class="form-group">
         <%= f.text_field :from, placeholder: "From" %>
       </div>
-      <div class="form-group">
+      <div class="form-group" id="to_field">
         <%= f.text_field :to, placeholder: "To" %>
+        <a id="add_field" class="btn btn-warning btn-xs">Add Recipient</a>
       </div>
       <div class="form-group">
         <%= f.text_field :body, placeholder: "Message" %>

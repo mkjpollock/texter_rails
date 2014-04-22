@@ -227,7 +227,6 @@ DEPENDENCIES
   sass-rails
   shoulda-matchers
   textacular
-  turbolinks
   uglifier
   vcr
   webmock
