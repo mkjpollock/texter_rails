@@ -13,11 +13,15 @@ class MessagesController < ApplicationController
       @sender_contact = User.find_by_phone(params[:message][:from])
       @receiver_contact = User.find_by_phone(phone)
       @contact = Contact.where(:user_id => @sender_contact.id, :receiver_id => @receiver_contact).first
-      @message = Message.new(:body => params[:message][:body], :to => phone, :from => @sender_contact.phone)
+      @message = Message.new(:body => params[:message][:body], :to => phone, :from => @sender_contact.phone, :mediaurl => params[:message][:mediaurl])
       if @message.save
         if @receiver_contact != nil
           @message.update(:contact_id => @contact.id)
         end
+      end
+      if !@message.save
+        flash[:error] = "There was an error."
+        render 'new'
       end
     end
     flash[:notice] = "Message(s) sent!"
@@ -27,7 +31,7 @@ class MessagesController < ApplicationController
 private
 
   def message_params
-    params.require(:message).permit(:body, :to, :from)
+    params.require(:message).permit(:body, :to, :from, :mediaurl)
   end
 
 end

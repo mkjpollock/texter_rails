@@ -13,8 +13,4 @@ Complete
 
 In progress
 -----------
-* As a user, I want to send pictures in my messages, so that I can share photos and cute cat pics with my friends.
-
-Backlog
----------
 * As a user who receives a text message, if I text back, I want to get an automated response telling me that the phone number can't receive texts, so that I don't get sad when the sender doesn't reply.
